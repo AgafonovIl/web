@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h3> Размещение по каютам </h3>
+    {% for user in list_of_passangers["passanger"] %}
+<h5> {{ user }} - каюта № {{ loop.index }} {% if loop.first %} капитан {% endif %} </h5>
+    {% endfor %}
+{% endblock %}<
