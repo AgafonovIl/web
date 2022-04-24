@@ -14,12 +14,12 @@ def home_page():
 @app.route('/sample_file_upload', methods=['POST', 'GET'])
 def sample_file_upload():
     if request.method == 'GET':
-        dirname = r'Web5\static\img'
+        dirname = r'static\img'
         files = os.listdir(dirname)
         return render_template('carousel.html', title='carousel', files=files)
     elif request.method == 'POST':
         f = request.files['file']
-        f.save(os.path.join(r'Web5\static\img', f.filename))
+        f.save(os.path.join(r'static\img', f.filename))
         return "Вернитесь на страницу"
 
 
